@@ -96,7 +96,5 @@ def blog(request):
 
 
 def view(request):
-    user1 = request.user
-    data = Blog.objects.get(user=user1)
-    obj = BlogForm.objects.filter(Customer_name=data)
-    return render(request, 'view.html', {'data': obj})
+    obj = Blog.objects.all()
+    return render(request, 'blog/blog.html', {'data': obj})
